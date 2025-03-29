@@ -20,52 +20,57 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: rgba(26, 26, 26, 0.95);
+    background-color: #1a1a1a;
     padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    gap: 2rem;
+}
+
+.nav-logo {
+    flex: 0 0 auto;
 }
 
 .nav-logo a {
-    font-family: "Playfair Display", serif;
-    font-size: 1.5rem;
     color: #e0e0e0;
     text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
     font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-logo a:hover {
+    color: #d4af37;
 }
 
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 2rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex: 0 0 auto;
 }
 
 .nav-links a {
     color: #e0e0e0;
     text-decoration: none;
+    font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: #d4af37;
 }
 
-/* Unlock Prompt in Navbar */
 .unlock-prompt {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: auto;
+    flex: 0 0 auto;
 }
 
 .password-input {
@@ -75,35 +80,35 @@ body {
 }
 
 .password-input input {
-    width: 150px;
     padding: 0.5rem;
-    background-color: #2a2a2a;
     border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 5px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
     color: #e0e0e0;
-    font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
+    width: 150px;
 }
 
 .unlock-btn {
-    background-color: #d4af37;
-    color: #1a1a1a;
     padding: 0.5rem 1rem;
+    background-color: #d4af37;
     border: none;
-    border-radius: 5px;
-    font-weight: 500;
+    border-radius: 4px;
+    color: #1a1a1a;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
 }
 
 .unlock-btn:hover {
-    background-color: #c19b2e;
+    background-color: #c4a030;
 }
 
 .error-message {
-    color: #ff6b6b;
-    font-size: 0.9rem;
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
     display: none;
 }
 
@@ -132,7 +137,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 2rem 2rem;
+    padding: 8rem 2rem 2rem;
     background-color: #1a1a1a;
     position: relative;
 }
@@ -778,6 +783,14 @@ footer {
     .hero-title {
         font-size: 3rem;
     }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -808,31 +821,44 @@ footer {
         font-size: 1.1rem;
     }
 
+    .nav-logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-logo a {
+        font-size: 1.4rem;
+    }
+
     .nav-links {
-        display: none;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
     }
 
     .unlock-prompt {
-        margin-left: 0;
         width: 100%;
-        justify-content: center;
+        margin: 0;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
     }
 
     .password-input {
-        flex-direction: column;
         width: 100%;
-        max-width: 200px;
+        max-width: 300px;
+        justify-content: center;
     }
 
     .password-input input {
-        width: 100%;
-    }
-
-    .unlock-btn {
-        width: 100%;
+        width: 120px;
     }
 
     .welcome-section h2 {
@@ -876,6 +902,10 @@ footer {
     .outfit-description {
         margin: 1rem auto 0;
         text-align: center;
+    }
+
+    .hero {
+        padding: 7rem 1rem 2rem;
     }
 }
 
@@ -931,5 +961,41 @@ footer {
 
     .outfit-description p {
         font-size: 1rem;
+    }
+
+    .navbar {
+        padding: 0.8rem 0.5rem;
+        gap: 0.8rem;
+    }
+
+    .nav-logo a {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .password-input {
+        flex-direction: row;
+        gap: 0.3rem;
+    }
+
+    .password-input input {
+        width: 100px;
+        padding: 0.4rem;
+    }
+
+    .unlock-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 6rem 1rem 2rem;
     }
 }

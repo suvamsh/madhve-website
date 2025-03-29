@@ -16,16 +16,31 @@
         <!-- Navigation -->
         <nav class="navbar">
             <div class="nav-logo">
-                <a href="home.html">Suvamsh & Niharika</a>
+                <a href="index.html">Suvamsh & Niharika</a>
             </div>
             <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="rsvp.html">RSVP</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li id="rsvpLink" style="display: none">
+                    <a href="rsvp.html">RSVP</a>
+                </li>
                 <li><a href="story.html">Story</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="qanda.html">Q & A</a></li>
                 <li><a href="outfits.html">Outfits Guide</a></li>
             </ul>
+            <div class="unlock-prompt">
+                <div class="password-input">
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        placeholder="Enter password"
+                    />
+                    <button onclick="checkPassword()" class="unlock-btn">
+                        Unlock
+                    </button>
+                </div>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
         </nav>
 
         <main>
@@ -109,5 +124,23 @@
                 <p>&copy; 2024 Suvamsh & Niharika. All rights reserved.</p>
             </div>
         </footer>
+
+        <script>
+            function checkPassword() {
+                const password = document.getElementById("passwordInput").value;
+                const rsvpLink = document.getElementById("rsvpLink");
+                const errorMessage = document.getElementById("errorMessage");
+
+                if (password === "nov28_30") {
+                    rsvpLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                } else {
+                    errorMessage.textContent =
+                        "Incorrect password. Please try again.";
+                    errorMessage.style.display = "block";
+                }
+            }
+        </script>
     </body>
 </html>
