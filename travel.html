@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Travel & Accommodation - Suvamsh & Niharika</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">Suvamsh & Niharika</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li id="rsvpLink" style="display: none">
+                    <a href="rsvp.html">RSVP</a>
+                </li>
+                <li id="travelLink" style="display: none">
+                    <a href="travel.html">Travel</a>
+                </li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="qanda.html">Q & A</a></li>
+            </ul>
+            <div class="unlock-prompt">
+                <div class="password-input">
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        placeholder="Enter password"
+                    />
+                    <button onclick="checkPassword()" class="unlock-btn">
+                        Unlock
+                    </button>
+                </div>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </nav>
+
+        <main>
+            <section class="page-header">
+                <h1>Travel & Accommodation</h1>
+                <p>
+                    Everything you need to know about getting here and staying
+                    here
+                </p>
+            </section>
+
+            <section class="travel-info">
+                <div class="container">
+                    <div class="hotel-section">
+                        <h2>Recommended Hotels</h2>
+                        <div class="hotel-grid">
+                            <div class="hotel-card">
+                                <h3>JW Marriott Hotel Bengaluru</h3>
+                                <p>
+                                    24/1, Vittal Mallya Road, Bangalore - 560001
+                                </p>
+                                <p>Phone: +91 80 6718 9999</p>
+                                <p>
+                                    Special rates available for wedding guests
+                                </p>
+                                <a
+                                    href="https://www.marriott.com/hotels/travel/blrwi-jw-marriott-hotel-bengaluru/"
+                                    target="_blank"
+                                    class="btn"
+                                    >Book Now</a
+                                >
+                            </div>
+                            <div class="hotel-card">
+                                <h3>Lalit Ashok Bangalore</h3>
+                                <p>
+                                    Kumara Krupa High Grounds, Bangalore -
+                                    560001
+                                </p>
+                                <p>Phone: +91 80 3052 7777</p>
+                                <p>
+                                    Special rates available for wedding guests
+                                </p>
+                                <a
+                                    href="https://www.thelalit.com/the-lalit-bangalore/"
+                                    target="_blank"
+                                    class="btn"
+                                    >Book Now</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transport-section">
+                        <h2>Transportation</h2>
+                        <div class="transport-info">
+                            <div class="transport-card">
+                                <h3>From Airport to Hotels</h3>
+                                <p>
+                                    We recommend using Uber or Ola for airport
+                                    transfers. The journey takes approximately
+                                    45-60 minutes.
+                                </p>
+                                <p>Approximate cost: ₹800-1000</p>
+                            </div>
+                            <div class="transport-card">
+                                <h3>Between Venues</h3>
+                                <p>
+                                    Shuttle service will be provided between
+                                    hotels and venues during the wedding events.
+                                </p>
+                                <p>
+                                    Schedule will be provided closer to the
+                                    date.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="local-info">
+                        <h2>Local Information</h2>
+                        <div class="local-grid">
+                            <div class="local-card">
+                                <h3>Weather</h3>
+                                <p>
+                                    November in Bangalore is pleasant with
+                                    temperatures ranging from 18°C to 28°C (64°F
+                                    to 82°F).
+                                </p>
+                            </div>
+                            <div class="local-card">
+                                <h3>Currency</h3>
+                                <p>
+                                    Indian Rupee (INR) is the local currency.
+                                    ATMs are widely available.
+                                </p>
+                            </div>
+                            <div class="local-card">
+                                <h3>Language</h3>
+                                <p>
+                                    English is widely spoken in Bangalore. Local
+                                    languages include Kannada and Hindi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Suvamsh & Niharika. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            function checkPassword() {
+                const password = document.getElementById("passwordInput").value;
+                const rsvpLink = document.getElementById("rsvpLink");
+                const travelLink = document.getElementById("travelLink");
+                const errorMessage = document.getElementById("errorMessage");
+
+                if (password === "nov28_30") {
+                    rsvpLink.style.display = "block";
+                    travelLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                } else {
+                    errorMessage.textContent =
+                        "Incorrect password. Please try again.";
+                    errorMessage.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>
