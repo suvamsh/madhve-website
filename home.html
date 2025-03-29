@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Suvamsh & Niharika</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="home.html">Suvamsh & Niharika</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li id="rsvpLink" style="display: none">
+                    <a href="rsvp.html">RSVP</a>
+                </li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="qanda.html">Q & A</a></li>
+                <li><a href="outfits.html">Outfits Guide</a></li>
+            </ul>
+            <div class="unlock-prompt">
+                <div class="password-input">
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        placeholder="Enter password"
+                    />
+                    <button onclick="checkPassword()" class="unlock-btn">
+                        Unlock
+                    </button>
+                </div>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <img
+                        src="img/couple.jpeg"
+                        alt="Couple Photo"
+                        class="hero-image"
+                    />
+                    <div class="hero-text">
+                        <h1 class="hero-title">Suvamsh & Niharika</h1>
+                        <p class="hero-subtitle">We're getting married!</p>
+                        <p class="hero-date">December 31, 2024</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Suvamsh & Niharika. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            function checkPassword() {
+                const password = document.getElementById("passwordInput").value;
+                const rsvpLink = document.getElementById("rsvpLink");
+                const errorMessage = document.getElementById("errorMessage");
+
+                if (password === "nov28_30") {
+                    rsvpLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                } else {
+                    errorMessage.textContent =
+                        "Incorrect password. Please try again.";
+                    errorMessage.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>
