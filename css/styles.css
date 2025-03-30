@@ -56,16 +56,24 @@ main {
 }
 
 .nav-logo {
-    flex: 0 0 auto;
-    margin-right: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .nav-logo a {
-    color: #8b7355; /* Soft brown text color from invitation */
+    color: var(--text-color);
     text-decoration: none;
-    font-family: "Playfair Display", serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
+    font-family: "Playfair Display", serif;
 }
 
 .nav-links {
