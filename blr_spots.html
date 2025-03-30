@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bangalore Spots - Suvamsh & Niharika</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">Suvamsh & Niharika</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rsvp.html">RSVP</a></li>
+                <li id="travelLink" style="display: none">
+                    <a href="travel.html">Travel</a>
+                </li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="qanda.html">Q & A</a></li>
+                <li class="active"><a href="blr_spots.html">We ❤️ BLR</a></li>
+            </ul>
+            <div class="unlock-prompt">
+                <div class="password-input">
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        placeholder="Enter password"
+                    />
+                    <button
+                        onclick="checkPassword()"
+                        class="unlock-btn"
+                    ></button>
+                </div>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </nav>
+
+        <main>
+            <section class="page-header">
+                <h1>Our Favorite Spots in Bangalore</h1>
+                <p>Places we love and recommend visiting</p>
+            </section>
+
+            <section class="favorite-spots">
+                <div class="container">
+                    <div class="map-section">
+                        <h2>
+                            <i class="fas fa-heart"></i> ❤️ Near JW Marriott
+                        </h2>
+                        <div class="spots-grid">
+                            <div class="spot-card">
+                                <div class="spot-image">
+                                    <img
+                                        src="img/toit.jpg"
+                                        alt="Toit Brewpub"
+                                    />
+                                </div>
+                                <div class="spot-content">
+                                    <h3>Toit Brewpub</h3>
+                                    <p>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Indiranagar
+                                    </p>
+                                    <p>
+                                        <i class="fas fa-utensils"></i> Craft
+                                        Beer & Pub Food
+                                    </p>
+                                    <div class="spot-map">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5960964!2d77.591299!3d12.971599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15986765d7d9%3A0x3565475c3365c3b1!2sToit%20Brewpub!5e0!3m2!1sen!2sin!4v1648123456789!5m2!1sen!2sin"
+                                            width="100%"
+                                            height="200"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spot-card">
+                                <div class="spot-image">
+                                    <img
+                                        src="img/13th-floor.jpg"
+                                        alt="13th Floor"
+                                    />
+                                </div>
+                                <div class="spot-content">
+                                    <h3>13th Floor</h3>
+                                    <p>
+                                        <i class="fas fa-map-marker-alt"></i> MG
+                                        Road
+                                    </p>
+                                    <p>
+                                        <i class="fas fa-glass-martini-alt"></i>
+                                        Rooftop Bar & Restaurant
+                                    </p>
+                                    <div class="spot-map">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5960964!2d77.591299!3d12.971599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15986765d7d9%3A0x3565475c3365c3b1!2s13th%20Floor!5e0!3m2!1sen!2sin!4v1648123456789!5m2!1sen!2sin"
+                                            width="100%"
+                                            height="200"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spot-card">
+                                <div class="spot-image">
+                                    <img
+                                        src="img/brahmins.jpg"
+                                        alt="Brahmins Coffee Bar"
+                                    />
+                                </div>
+                                <div class="spot-content">
+                                    <h3>Brahmins Coffee Bar</h3>
+                                    <p>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Basavanagudi
+                                    </p>
+                                    <p>
+                                        <i class="fas fa-coffee"></i>
+                                        Traditional South Indian Breakfast
+                                    </p>
+                                    <div class="spot-map">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5960964!2d77.591299!3d12.971599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15986765d7d9%3A0x3565475c3365c3b1!2sBrahmins%20Coffee%20Bar!5e0!3m2!1sen!2sin!4v1648123456789!5m2!1sen!2sin"
+                                            width="100%"
+                                            height="200"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Suvamsh & Niharika. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            // Check localStorage when page loads
+            window.onload = function () {
+                const travelLink = document.getElementById("travelLink");
+                if (localStorage.getItem("passwordUnlocked") === "true") {
+                    travelLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                }
+            };
+
+            function checkPassword() {
+                const password = document.getElementById("passwordInput").value;
+                const travelLink = document.getElementById("travelLink");
+                const errorMessage = document.getElementById("errorMessage");
+
+                if (password === "nov28_30") {
+                    travelLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                    localStorage.setItem("passwordUnlocked", "true");
+                } else {
+                    errorMessage.textContent =
+                        "Incorrect password. Please try again.";
+                    errorMessage.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>
