@@ -29,6 +29,9 @@ body {
 main {
     flex: 1 0 auto;
     padding-bottom: 80px; /* Add padding to prevent content from being hidden behind footer */
+    position: relative;
+    z-index: 1;
+    background-color: var(--background-color);
 }
 
 .container {
@@ -219,11 +222,16 @@ main {
     justify-content: center;
     padding: 120px 2rem 2rem;
     background-color: var(--background-color);
-    position: relative;
+    position: fixed; /* Changed from relative to fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url("../img/temple.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 0; /* Added z-index */
 }
 
 .hero::before {
@@ -233,12 +241,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(
-        0,
-        0,
-        0,
-        0.3
-    ); /* Dark overlay for better text readability */
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -337,6 +340,8 @@ main {
     padding: 5rem 0;
     background-color: var(--section-bg);
     position: relative;
+    margin-top: 100vh; /* Add margin equal to hero height */
+    z-index: 1;
 }
 
 .welcome-section h2 {
