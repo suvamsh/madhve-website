@@ -19,10 +19,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li id="rsvpLink" style="display: none">
-                    <a href="rsvp.html">RSVP</a>
-                </li>
-                <li id="travelLink" style="display: none">
+                <li><a href="rsvp.html">RSVP</a></li>
+                <li id="travelLink" class="active" style="display: block">
                     <a href="travel.html">Travel</a>
                 </li>
                 <li><a href="story.html">Story</a></li>
@@ -36,9 +34,10 @@
                         id="passwordInput"
                         placeholder="Enter password"
                     />
-                    <button onclick="checkPassword()" class="unlock-btn">
-                        Unlock
-                    </button>
+                    <button
+                        onclick="checkPassword()"
+                        class="unlock-btn"
+                    ></button>
                 </div>
                 <p id="errorMessage" class="error-message"></p>
             </div>
@@ -158,17 +157,27 @@
         </footer>
 
         <script>
+            // Check localStorage when page loads
+            window.onload = function () {
+                const travelLink = document.getElementById("travelLink");
+                const unlockPrompt = document.querySelector(".unlock-prompt");
+                // Always show travel link on travel page
+                travelLink.style.display = "block";
+                if (localStorage.getItem("passwordUnlocked") === "true") {
+                    unlockPrompt.style.display = "none";
+                }
+            };
+
             function checkPassword() {
                 const password = document.getElementById("passwordInput").value;
-                const rsvpLink = document.getElementById("rsvpLink");
                 const travelLink = document.getElementById("travelLink");
+                const unlockPrompt = document.querySelector(".unlock-prompt");
                 const errorMessage = document.getElementById("errorMessage");
 
                 if (password === "nov28_30") {
-                    rsvpLink.style.display = "block";
                     travelLink.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    localStorage.setItem("passwordUnlocked", "true");
                 } else {
                     errorMessage.textContent =
                         "Incorrect password. Please try again.";

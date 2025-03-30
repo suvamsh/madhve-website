@@ -25,7 +25,7 @@
                 </li>
                 <li><a href="story.html">Story</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="qanda.html">Q & A</a></li>
+                <li class="active"><a href="qanda.html">Q & A</a></li>
             </ul>
             <div class="unlock-prompt">
                 <div class="password-input">
@@ -34,9 +34,10 @@
                         id="passwordInput"
                         placeholder="Enter password"
                     />
-                    <button onclick="checkPassword()" class="unlock-btn">
-                        Unlock
-                    </button>
+                    <button
+                        onclick="checkPassword()"
+                        class="unlock-btn"
+                    ></button>
                 </div>
                 <p id="errorMessage" class="error-message"></p>
             </div>
@@ -52,85 +53,41 @@
                 <div class="container">
                     <div class="faq-item">
                         <h3>What is the dress code?</h3>
-                        <p>
-                            Formal attire is requested. Please check our Outfits
-                            Guide page for more details.
-                        </p>
+                        <p>Please refer to the schedule page.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3>Is there parking available?</h3>
                         <p>
                             Yes, complimentary parking is available at the
-                            venue. Please arrive early to secure a spot.
+                            venue.
                         </p>
                     </div>
-
                     <div class="faq-item">
-                        <h3>Are there hotel accommodations nearby?</h3>
-                        <p>
-                            Yes, we have arranged special rates at several
-                            nearby hotels. Please contact us for the booking
-                            codes.
-                        </p>
+                        <h3>Will there be vegetarian options?</h3>
+                        <p>All food will be vegetarian.</p>
                     </div>
-
-                    <div class="faq-item">
-                        <h3>Will there be vegetarian/vegan options?</h3>
-                        <p>
-                            Yes, we will have both vegetarian and vegan options
-                            available. Please indicate any dietary restrictions
-                            in your RSVP.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Can I bring a plus one?</h3>
-                        <p>
-                            Please check your invitation for the number of
-                            guests allowed. If you have any questions, feel free
-                            to contact us.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>What time should I arrive?</h3>
-                        <p>
-                            Please arrive at least 30 minutes before the
-                            ceremony start time to ensure a smooth beginning.
-                        </p>
-                    </div>
-
                     <div class="faq-item">
                         <h3>Is there a gift registry?</h3>
-                        <p>
-                            Yes, we have registered at several stores. Please
-                            check your invitation for registry details.
-                        </p>
+                        <p>The only gift we want is your presence.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3>Will there be a shuttle service?</h3>
                         <p>
                             Yes, we will provide shuttle service from the
-                            designated hotels to the venue. Schedule will be
-                            provided closer to the date.
+                            designated hotel to the venue and back.
                         </p>
                     </div>
                 </div>
             </section>
-
             <section class="contact">
                 <div class="container">
                     <h2>Still have questions?</h2>
                     <p>
                         If you have any other questions, please don't hesitate
-                        to reach out to us:
+                        to reach out to either of us over WhatsApp.
                     </p>
-                    <div class="contact-info">
-                        <p>Email: wedding@example.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </div>
                 </div>
             </section>
         </main>
@@ -142,6 +99,16 @@
         </footer>
 
         <script>
+            // Check localStorage when page loads
+            window.onload = function () {
+                const travelLink = document.getElementById("travelLink");
+                if (localStorage.getItem("passwordUnlocked") === "true") {
+                    travelLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                }
+            };
+
             function checkPassword() {
                 const password = document.getElementById("passwordInput").value;
                 const travelLink = document.getElementById("travelLink");
@@ -151,6 +118,7 @@
                     travelLink.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
+                    localStorage.setItem("passwordUnlocked", "true");
                 } else {
                     errorMessage.textContent =
                         "Incorrect password. Please try again.";

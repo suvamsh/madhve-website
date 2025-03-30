@@ -23,7 +23,7 @@
                 <li id="travelLink" style="display: none">
                     <a href="travel.html">Travel</a>
                 </li>
-                <li><a href="story.html">Story</a></li>
+                <li class="active"><a href="story.html">Story</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="qanda.html">Q & A</a></li>
             </ul>
@@ -34,9 +34,10 @@
                         id="passwordInput"
                         placeholder="Enter password"
                     />
-                    <button onclick="checkPassword()" class="unlock-btn">
-                        Unlock
-                    </button>
+                    <button
+                        onclick="checkPassword()"
+                        class="unlock-btn"
+                    ></button>
                 </div>
                 <p id="errorMessage" class="error-message"></p>
             </div>
@@ -147,6 +148,16 @@
         </footer>
 
         <script>
+            // Check localStorage when page loads
+            window.onload = function () {
+                const travelLink = document.getElementById("travelLink");
+                if (localStorage.getItem("passwordUnlocked") === "true") {
+                    travelLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                }
+            };
+
             function checkPassword() {
                 const password = document.getElementById("passwordInput").value;
                 const travelLink = document.getElementById("travelLink");
@@ -156,6 +167,7 @@
                     travelLink.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
+                    localStorage.setItem("passwordUnlocked", "true");
                 } else {
                     errorMessage.textContent =
                         "Incorrect password. Please try again.";
