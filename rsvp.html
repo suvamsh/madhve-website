@@ -47,6 +47,9 @@
             <section class="page-header">
                 <h1>RSVP</h1>
                 <p>Please respond by August 1st, 2025</p>
+                <p style="color: #d4af37; font-size: 1.1rem">
+                    Only one RSVP per family required
+                </p>
             </section>
 
             <section class="rsvp-form">
@@ -68,20 +71,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="attending"
-                                >Will you be attending?</label
+                            <label for="guests"
+                                >How many people from your family will attend in
+                                total?</label
                             >
-                            <select id="attending" name="attending" required>
-                                <option value="">Please select</option>
-                                <option value="yes">
-                                    Yes, I will be attending
-                                </option>
-                                <option value="no">No, I cannot attend</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="guests">Number of Guests</label>
                             <input
                                 type="number"
                                 id="guests"
@@ -94,16 +87,64 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="dietary">Dietary Restrictions</label>
-                            <textarea
-                                id="dietary"
-                                name="dietary"
-                                rows="3"
-                            ></textarea>
+                            <label for="haldi"
+                                >Will you attend the Haldi - Mehendi?</label
+                            >
+                            <select id="haldi" name="haldi" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message to the Couple</label>
+                            <label for="sangeetha"
+                                >Will you attend the Sangeetha?</label
+                            >
+                            <select id="sangeetha" name="sangeetha" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reception"
+                                >Will you attend the Reception?</label
+                            >
+                            <select id="reception" name="reception" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="muhurtha"
+                                >Will you attend the Muhurtha (Wedding)?</label
+                            >
+                            <select id="muhurtha" name="muhurtha" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cocktail"
+                                >Will you attend the Cocktail Party?</label
+                            >
+                            <select id="cocktail" name="cocktail" required>
+                                <option value="">Please select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"
+                                >Message to the Couple (Optional)</label
+                            >
                             <textarea
                                 id="message"
                                 name="message"
