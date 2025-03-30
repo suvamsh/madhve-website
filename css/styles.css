@@ -184,6 +184,7 @@ body {
     padding: 120px 0 60px;
     background-color: var(--background-color);
     position: relative;
+    margin-top: 0; /* Reset any margin */
 }
 
 .page-header h1 {
@@ -217,22 +218,30 @@ body {
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 4rem;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .hero-image {
-    width: 400px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(98, 76, 56, 0.1);
-    flex: 0 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--section-bg);
+}
+
+.hero-image-container {
+    flex: 1;
+    height: 600px;
+    min-width: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .hero-text {
@@ -242,7 +251,7 @@ body {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(139, 115, 85, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(139, 115, 85, 0.2);
 }
 
@@ -266,24 +275,31 @@ body {
 
 .hero-date {
     font-size: 1.5rem;
-    color: #8b7355; /* Soft brown from invitation */
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #8b7355;
+    margin: 1rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.rsvp-deadline {
+    font-size: 1.1rem;
+    color: #8b7355;
+    margin-top: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 1.2rem 4rem; /* Increased horizontal padding for oval shape */
-    background-color: #8b7355; /* Soft brown */
-    color: #ffffff;
+    padding: 1rem 2.5rem;
+    background-color: #8b7355;
+    color: #fff;
     text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.4rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
     font-weight: 500;
-    border-radius: 50px; /* Increased border radius for pill/oval shape */
     transition: all 0.3s ease;
-    margin: 1rem auto 0;
+    margin-top: 1rem;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -558,6 +574,9 @@ body {
     background-color: var(--section-bg);
     border-radius: 8px;
     border: 1px solid rgba(98, 76, 56, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .outfit-info h4 {
@@ -581,6 +600,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: var(--section-bg);
+    margin: 0 auto;
 }
 
 .venue-info {
@@ -1022,15 +1042,19 @@ footer a:hover {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+        padding: 0 1rem;
     }
 
-    .hero-image {
-        width: 300px;
+    .hero-image-container {
+        width: 100%;
         height: 400px;
+        min-width: unset;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
     .hero-text {
         text-align: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
     .hero-title {
@@ -1097,10 +1121,20 @@ footer a:hover {
     .schedule-content {
         flex-direction: column;
         gap: 1.5rem;
+        align-items: center;
+    }
+
+    .outfit-info {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .outfit-image {
+        width: 100%;
+        max-width: 400px;
         height: 400px;
+        margin: 0 auto;
     }
 
     .venue-info {
@@ -1126,7 +1160,7 @@ footer a:hover {
     }
 
     .hero {
-        padding: 7rem 1rem 2rem;
+        padding: 180px 1rem 2rem; /* Increased top padding for mobile */
     }
 
     .schedule-time h3 {
@@ -1165,12 +1199,23 @@ footer a:hover {
     .nav-links li {
         padding: 0.4rem 0.8rem;
     }
+
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        position: fixed;
+    }
+
+    .page-header {
+        padding: 180px 0 60px; /* Increased top padding for mobile */
+    }
 }
 
 @media (max-width: 480px) {
-    .hero-image {
-        width: 250px;
-        height: 350px;
+    .hero-image-container {
+        height: 300px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
 
     .hero-title {
@@ -1235,9 +1280,15 @@ footer a:hover {
     }
 
     .navbar {
-        padding: 1rem;
-        flex-direction: column;
-        gap: 1rem;
+        padding: 0.8rem;
+    }
+
+    .page-header {
+        padding: 200px 0 60px; /* Further increased top padding for smaller mobile */
+    }
+
+    .hero {
+        padding: 200px 1rem 2rem; /* Further increased top padding for smaller mobile */
     }
 
     .nav-logo a {
@@ -1272,10 +1323,6 @@ footer a:hover {
         font-size: 1rem; /* Slightly smaller on mobile */
     }
 
-    .hero {
-        padding: 6rem 1rem 2rem;
-    }
-
     .outfit-description h4,
     .outfit-info h4,
     .venue-info h4 {
@@ -1303,6 +1350,15 @@ footer a:hover {
 
     .nav-links li {
         padding: 0.3rem 0.6rem;
+    }
+
+    .outfit-info {
+        max-width: 100%;
+    }
+
+    .outfit-image {
+        max-width: 100%;
+        height: 300px;
     }
 }
 
