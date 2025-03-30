@@ -492,7 +492,7 @@ main {
 }
 
 .timeline-date {
-    color: var(--accent-color);
+    color: #8b7355; /* Dark tan brown */
     font-weight: 500;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -500,13 +500,13 @@ main {
 
 .timeline-content h2 {
     font-family: "Playfair Display", serif;
-    color: var(--text-color);
+    color: #8b7355; /* Dark tan brown */
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
 
 .timeline-content p {
-    color: var(--text-color);
+    color: #b4a089; /* Light tan brown */
     line-height: 1.8;
     font-size: 1.1rem;
 }
@@ -1581,7 +1581,7 @@ footer a:hover {
 
 .travel-info h2 {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: #8b7355; /* Dark tan brown */
     margin-bottom: 2rem;
     text-align: center;
     font-family: "Playfair Display", serif;
@@ -1592,7 +1592,7 @@ footer a:hover {
 
 .travel-info h2 i {
     margin-right: 1rem;
-    color: var(--accent-color);
+    color: #8b7355; /* Dark tan brown */
 }
 
 /* Hotel Section */
@@ -1646,14 +1646,14 @@ footer a:hover {
 
 .hotel-content h3 {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: #8b7355; /* Dark tan brown */
     margin-bottom: 1rem;
     font-family: "Playfair Display", serif;
 }
 
 .hotel-content p {
     margin-bottom: 0.8rem;
-    color: var(--text-color);
+    color: #b4a089; /* Light tan brown */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1713,13 +1713,13 @@ footer a:hover {
 
 .transport-card h3 {
     font-size: 1.3rem;
-    color: var(--text-color);
+    color: #8b7355; /* Dark tan brown */
     margin-bottom: 1rem;
     font-family: "Playfair Display", serif;
 }
 
 .transport-card p {
-    color: var(--text-color);
+    color: #b4a089; /* Light tan brown */
     margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
@@ -1773,13 +1773,13 @@ footer a:hover {
 
 .local-card h3 {
     font-size: 1.3rem;
-    color: var(--text-color);
+    color: #8b7355; /* Dark tan brown */
     margin-bottom: 1rem;
     font-family: "Playfair Display", serif;
 }
 
 .local-card p {
-    color: var(--text-color);
+    color: #b4a089; /* Light tan brown */
     line-height: 1.6;
 }
 
@@ -1887,7 +1887,7 @@ footer a:hover {
 }
 
 .spot-content h3 {
-    color: var(--text-color);
+    color: #8b7355; /* Dark tan brown */
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-family: "Playfair Display", serif;
@@ -1895,17 +1895,17 @@ footer a:hover {
 }
 
 .spot-content p {
-    color: var(--text-color);
+    color: #b4a089; /* Light tan brown */
     margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the flex container */
+    justify-content: center;
     gap: 0.5rem;
     text-align: center;
 }
 
 .spot-content i {
-    color: var(--accent-color);
+    color: #8b7355; /* Dark tan brown */
     width: 20px;
     flex-shrink: 0;
 }
@@ -1927,4 +1927,17 @@ footer a:hover {
     .spots-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.map-section h2 {
+    color: #8b7355; /* Dark tan brown */
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+}
+
+.map-section h2 i {
+    color: #8b7355; /* Dark tan brown */
+    margin-right: 1rem;
 }
