@@ -24,14 +24,16 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 main {
     flex: 1 0 auto;
-    padding-bottom: 80px; /* Add padding to prevent content from being hidden behind footer */
     position: relative;
     z-index: 1;
     background-color: var(--background-color);
+    min-height: 100vh;
 }
 
 .container {
@@ -1025,27 +1027,7 @@ main {
 
 /* Footer */
 footer {
-    background-color: #d4c5b4; /* Warm beige background from invitation */
-    color: #8b7355; /* Soft brown text color from invitation */
-    padding: 2rem 0;
-    text-align: center;
-    border-top: 1px solid rgba(139, 115, 85, 0.2); /* Soft brown border */
-    flex-shrink: 0; /* Prevent footer from shrinking */
-    position: fixed; /* Make footer fixed */
-    bottom: 0; /* Stick to bottom */
-    left: 0; /* Align to left */
-    right: 0; /* Align to right */
-    z-index: 100; /* Keep above content but below navbar */
-}
-
-footer a {
-    color: #8b7355; /* Soft brown text color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #b4a089; /* Lighter brown for hover state */
+    display: none;
 }
 
 /* Password Protection */
