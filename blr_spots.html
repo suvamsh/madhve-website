@@ -252,12 +252,6 @@
             </section>
         </main>
 
-        <!-- <footer>
-            <div class="container">
-                <p>&copy; 2025 Suvamsh & Niharika. All rights reserved.</p>
-            </div>
-        </footer> -->
-
         <script>
             // Add this before the existing window.onload function
             document.addEventListener("DOMContentLoaded", function () {
@@ -287,23 +281,6 @@
                         "none";
                 }
             };
-
-            function checkPassword() {
-                const password = document.getElementById("passwordInput").value;
-                const travelLink = document.getElementById("travelLink");
-                const errorMessage = document.getElementById("errorMessage");
-
-                if (password === "nov28_30") {
-                    travelLink.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
-                    localStorage.setItem("passwordUnlocked", "true");
-                } else {
-                    errorMessage.textContent =
-                        "Incorrect password. Please try again.";
-                    errorMessage.style.display = "block";
-                }
-            }
         </script>
     </body>
 </html>

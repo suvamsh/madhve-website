@@ -194,23 +194,6 @@
                 }
             };
 
-            function checkPassword() {
-                const password = document.getElementById("passwordInput").value;
-                const travelLink = document.getElementById("travelLink");
-                const errorMessage = document.getElementById("errorMessage");
-
-                if (password === "nov28_30") {
-                    travelLink.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
-                    localStorage.setItem("passwordUnlocked", "true");
-                } else {
-                    errorMessage.textContent =
-                        "Incorrect password. Please try again.";
-                    errorMessage.style.display = "block";
-                }
-            }
-
             document
                 .getElementById("rsvpForm")
                 .addEventListener("submit", function (e) {

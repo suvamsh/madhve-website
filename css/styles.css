@@ -233,11 +233,7 @@ main {
     justify-content: center;
     padding: 80px 2rem 2rem;
     background-color: var(--background-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: relative;
     background-image: url("../img/temple.jpeg");
     background-size: cover;
     background-position: center;
@@ -351,7 +347,6 @@ main {
     padding: 5rem 0;
     background-color: var(--section-bg);
     position: relative;
-    margin-top: 100vh; /* Add margin equal to hero height */
     z-index: 1;
 }
 
@@ -621,6 +616,8 @@ main {
     padding-bottom: 1.5rem;
     border-bottom: 2px solid rgba(180, 160, 137, 0.3);
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Decorative line with center motif */
@@ -643,8 +640,14 @@ main {
     color: #8b7355;
     font-family: "Playfair Display", serif;
     position: relative;
-    display: inline-block;
+    display: block;
     padding: 0 60px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Decorative flourishes around event name */
@@ -671,7 +674,7 @@ main {
 
 .schedule-time .time {
     font-size: 2rem;
-    color: #b4a089; /* Lighter brown from invitation */
+    color: #b4a089;
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -683,13 +686,13 @@ main {
 .outfit-description h4 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #8b7355; /* Soft brown from invitation */
+    color: #8b7355;
     font-family: "Playfair Display", serif;
 }
 
 .outfit-description p {
     font-size: 1.3rem;
-    color: #8b7355; /* Soft brown from invitation */
+    color: #8b7355;
     line-height: 1.8;
 }
 
@@ -716,13 +719,13 @@ main {
 .outfit-info h4 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #8b7355; /* Soft brown from invitation */
+    color: #8b7355;
     font-family: "Playfair Display", serif;
 }
 
 .outfit-info p {
     font-size: 1.3rem;
-    color: #8b7355; /* Soft brown from invitation */
+    color: #8b7355;
     margin-bottom: 2rem;
     line-height: 1.8;
 }
@@ -756,14 +759,14 @@ main {
 .venue-info h4 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #8b7355; /* Soft brown from invitation */
+    color: #8b7355;
     font-family: "Playfair Display", serif;
     text-align: center;
 }
 
 .venue-info p {
     font-size: 1.3rem;
-    color: #8b7355; /* Soft brown from invitation */
+    color: #8b7355;
     margin-bottom: 2rem;
     text-align: center;
     max-width: 80%;
@@ -1266,23 +1269,29 @@ footer {
     }
 
     .schedule-time h3 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+        padding: 0 40px;
     }
 
     .schedule-time .time {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .outfit-description h4,
     .outfit-info h4,
     .venue-info h4 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .outfit-description p,
     .outfit-info p,
     .venue-info p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .venue-info p {
+        max-width: 100%;
     }
 
     .form-group input,
@@ -1343,7 +1352,7 @@ footer {
     }
 
     .hero {
-        padding: 180px 1rem 2rem;
+        padding: 120px 1rem 2rem;
     }
 
     .hero-text {
@@ -1372,11 +1381,12 @@ footer {
     }
 
     .schedule-time h3 {
-        font-size: 3rem;
+        font-size: 2.4rem;
+        padding: 0 30px;
     }
 
     .schedule-time .time {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .outfit-image {
@@ -1972,10 +1982,10 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 0.8rem;
         transition: right 0.3s ease;
         z-index: 1000;
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .nav-links.active {
@@ -1988,8 +1998,8 @@ footer {
     }
 
     .nav-links li a {
-        font-size: 1.2rem;
-        padding: 1rem;
+        font-size: 1.1rem;
+        padding: 0.6rem;
         display: block;
     }
 
@@ -2027,6 +2037,18 @@ footer {
     /* Hide unlock prompt on mobile */
     .unlock-prompt {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.6rem;
+        padding: 0.8rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 0.5rem;
     }
 }
 
