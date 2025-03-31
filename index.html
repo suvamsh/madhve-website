@@ -10,7 +10,7 @@
         <meta name="title" content="Suvamsh & Niharika's Wedding" />
         <meta
             name="description"
-            content="Namaskara! We are getting married on November 28-30, 2025. We can't wait to celebrate with y'all!"
+            content="We can't wait to celebrate with y'all"
         />
 
         <!-- Open Graph / Facebook -->
@@ -78,20 +78,6 @@
                 <li><a href="qanda.html">Q & A</a></li>
                 <li><a href="blr_spots.html">We ❤️ BLR</a></li>
             </ul>
-            <div class="unlock-prompt">
-                <div class="password-input">
-                    <input
-                        type="password"
-                        id="passwordInput"
-                        placeholder="Enter password"
-                    />
-                    <button
-                        onclick="checkPassword()"
-                        class="unlock-btn"
-                    ></button>
-                </div>
-                <p id="errorMessage" class="error-message"></p>
-            </div>
         </nav>
 
         <main>
@@ -104,20 +90,30 @@
                             Niharika
                         </h1>
                         <p class="hero-date">November 28-30, 2025</p>
-                        <a href="rsvp.html" class="cta-button">RSVP</a>
                         <p class="rsvp-deadline">
                             Please RSVP by August 1st, 2025
                         </p>
+                        <a href="rsvp.html" class="cta-button">RSVP</a>
+                    </div>
+                </div>
+                <div class="hero-unlock">
+                    <div class="unlock-prompt">
+                        <div class="password-input">
+                            <input
+                                type="password"
+                                id="passwordInput"
+                                placeholder="Password"
+                            />
+                            <button
+                                onclick="checkPassword()"
+                                class="unlock-btn"
+                            ></button>
+                        </div>
+                        <p id="errorMessage" class="error-message"></p>
                     </div>
                 </div>
             </section>
         </main>
-
-        <!-- <footer>
-            <div class="container">
-                <p>&copy; 2025 Suvamsh & Niharika. All rights reserved.</p>
-            </div>
-        </footer> -->
 
         <script>
             // Add this before the existing window.onload function

@@ -228,11 +228,12 @@ main {
 .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 120px 2rem 2rem;
+    padding: 80px 2rem 2rem;
     background-color: var(--background-color);
-    position: fixed; /* Changed from relative to fixed */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -241,7 +242,7 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 0; /* Added z-index */
+    z-index: 0;
 }
 
 .hero::before {
@@ -259,9 +260,9 @@ main {
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -282,7 +283,7 @@ main {
 .hero-text {
     flex: 1;
     text-align: center;
-    max-width: 600px;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 10px;
@@ -1172,7 +1173,7 @@ footer {
     }
 
     .hero {
-        padding: 160px 1rem 2rem;
+        padding: 100px 1rem 2rem;
     }
 
     .nav-logo {
@@ -2033,4 +2034,128 @@ footer {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.hero-unlock {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-unlock .unlock-prompt {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(139, 115, 85, 0.2);
+    display: inline-block;
+    width: 100%;
+}
+
+.hero-unlock .password-input {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.hero-unlock .password-input input {
+    flex: 1;
+    max-width: 300px;
+    padding: 0.6rem 1rem;
+    border: 1px solid #b4a089;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #8b7355;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.hero-unlock .unlock-btn {
+    padding: 0.6rem 2rem;
+    background-color: #8b7355;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.hero-unlock .unlock-btn::before {
+    content: "🔓";
+    font-size: 1.1rem;
+}
+
+.hero-unlock .unlock-btn:hover {
+    background-color: #b4a089;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+}
+
+.hero-unlock .error-message {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin: 0;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hero-content,
+    .hero-unlock {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-text {
+        padding: 1.5rem;
+    }
+
+    .hero-unlock .unlock-prompt {
+        padding: 0.6rem 1rem;
+    }
+
+    .hero-unlock .password-input {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .hero-unlock .password-input input {
+        max-width: 200px;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content,
+    .hero-unlock {
+        padding: 0 0.8rem;
+    }
+
+    .hero-text {
+        padding: 1.2rem;
+    }
+
+    .hero-unlock .password-input {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .hero-unlock .password-input input {
+        max-width: 180px;
+    }
 }
