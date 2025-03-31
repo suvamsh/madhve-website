@@ -228,12 +228,6 @@
             </section>
         </main>
 
-        <!-- <footer>
-            <div class="container">
-                <p>&copy; 2025 Suvamsh & Niharika. All rights reserved.</p>
-            </div>
-        </footer> -->
-
         <script>
             // Add this before the existing window.onload function
             document.addEventListener("DOMContentLoaded", function () {
@@ -252,15 +246,37 @@
                         navLinks.classList.remove("active");
                     });
                 });
+
+                // Check password state and show/hide schedule items
+                const scheduleItems =
+                    document.querySelectorAll(".schedule-item");
+                const passwordUnlocked =
+                    localStorage.getItem("passwordUnlocked");
+
+                // Hide all items except reception and wedding by default
+                scheduleItems.forEach((item, index) => {
+                    if (index !== 2 && index !== 3) {
+                        // Reception is index 2, Wedding is index 3
+                        item.style.display = "none";
+                    }
+                });
+
+                // Show all items if password is "blr2025"
+                if (
+                    passwordUnlocked === "jw2025" ||
+                    passwordUnlocked === "blr2025"
+                ) {
+                    scheduleItems.forEach((item) => {
+                        item.style.display = "block";
+                    });
+                }
             });
 
             // Check localStorage when page loads
             window.onload = function () {
                 const travelLink = document.getElementById("travelLink");
-                if (localStorage.getItem("passwordUnlocked") === "true") {
+                if (localStorage.getItem("passwordUnlocked") === "jw2025") {
                     travelLink.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
                 }
             };
         </script>

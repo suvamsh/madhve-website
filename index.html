@@ -138,8 +138,13 @@
             // Check localStorage when page loads
             window.onload = function () {
                 const travelLink = document.getElementById("travelLink");
-                if (localStorage.getItem("passwordUnlocked") === "true") {
+                if (localStorage.getItem("passwordUnlocked") === "jw2025") {
                     travelLink.style.display = "block";
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                } else if (
+                    localStorage.getItem("passwordUnlocked") === "blr2025"
+                ) {
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
                 }
@@ -150,14 +155,17 @@
                 const travelLink = document.getElementById("travelLink");
                 const errorMessage = document.getElementById("errorMessage");
 
-                if (password === "nov28_30") {
+                if (password === "jw2025") {
                     travelLink.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
-                    localStorage.setItem("passwordUnlocked", "true");
+                    localStorage.setItem("passwordUnlocked", "jw2025");
+                } else if (password === "blr2025") {
+                    document.querySelector(".unlock-prompt").style.display =
+                        "none";
+                    localStorage.setItem("passwordUnlocked", "blr2025");
                 } else {
-                    errorMessage.textContent =
-                        "Incorrect password. Please try again.";
+                    errorMessage.textContent = "Incorrect password.";
                     errorMessage.style.display = "block";
                 }
             }

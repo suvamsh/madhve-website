@@ -126,10 +126,8 @@
             // Check localStorage when page loads
             window.onload = function () {
                 const travelLink = document.getElementById("travelLink");
-                if (localStorage.getItem("passwordUnlocked") === "true") {
+                if (localStorage.getItem("passwordUnlocked") === "jw2025") {
                     travelLink.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
                 }
             };
         </script>
