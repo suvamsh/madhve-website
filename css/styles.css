@@ -201,26 +201,27 @@ main {
 
 /* Page Header */
 .page-header {
-    background-color: var(--background-color);
-    padding: 6rem 2rem 4rem;
     text-align: center;
+    padding: 120px 0 60px;
+    background-color: var(--background-color);
     position: relative;
-    z-index: 1;
+    margin-top: 0;
 }
 
 .page-header h1 {
+    position: relative;
+    z-index: 1;
     font-family: "Playfair Display", serif;
     font-size: 3rem;
-    color: var(--text-color);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 
 .page-header p {
+    position: relative;
+    z-index: 1;
+    color: var(--tertiary-color);
     font-size: 1.2rem;
-    color: var(--text-color);
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
 }
 
 /* Hero Section */
@@ -1167,7 +1168,7 @@ footer {
     }
 
     .page-header {
-        padding: 5rem 1rem 3rem;
+        padding: 160px 0 60px;
     }
 
     .hero {
