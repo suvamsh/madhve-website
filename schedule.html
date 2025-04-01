@@ -192,7 +192,7 @@
                         </div>
                     </div>
 
-                    <div class="schedule-item">
+                    <div class="schedule-item" id="cocktail">
                         <div class="schedule-time">
                             <h3>Cocktail Party</h3>
                             <p class="time">Nov 30, 2025</p>
@@ -271,6 +271,12 @@
                     scheduleItems.forEach((item) => {
                         item.style.display = "block";
                     });
+                } else if (passwordUnlocked === "family2025") {
+                    scheduleItems.forEach((item) => {
+                        if (item.id !== "cocktail") {
+                            item.style.display = "block";
+                        }
+                    });
                 }
             });
 
@@ -283,6 +289,10 @@
                     rsvpLink.style.display = "block";
                 } else if (
                     localStorage.getItem("passwordUnlocked") === "blr2025"
+                ) {
+                    rsvpLink.style.display = "block";
+                } else if (
+                    localStorage.getItem("passwordUnlocked") === "family2025"
                 ) {
                     rsvpLink.style.display = "block";
                 }
