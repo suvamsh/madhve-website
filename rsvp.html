@@ -151,18 +151,13 @@
                         </div>
 
                         <button type="submit" class="submit-btn">
-                            Submit RSVP
+                            <span>Submit RSVP</span>
+                            <div class="spinner"></div>
                         </button>
                     </form>
                 </div>
             </section>
         </main>
-
-        <!-- <footer>
-            <div class="container">
-                <p>&copy; 2025 Suvamsh & Niharika. All rights reserved.</p>
-            </div>
-        </footer> -->
 
         <script>
             // Add this before the existing window.onload function
@@ -196,6 +191,8 @@
                 .getElementById("rsvpForm")
                 .addEventListener("submit", function (e) {
                     e.preventDefault();
+                    const submitBtn = this.querySelector(".submit-btn");
+                    submitBtn.classList.add("loading");
 
                     const formData = {
                         name: document.getElementById("name").value,
@@ -210,7 +207,7 @@
                     };
 
                     const scriptURL =
-                        "https://script.google.com/macros/s/AKfycbzob8Tv19XCoDJTV4UhWzwk2QSfdHxnFqmgFFOHdxNARHrzgXuYsUc92ti61ictVE4J/exec";
+                        "https://script.google.com/macros/s/AKfycbyrJSymYuaaAnAFPsTc5WrePjBfqK95rek41FGLebJ6uxZkPPOiKOhsobOdrNPJU_tk/exec";
 
                     fetch(scriptURL, {
                         method: "POST",
@@ -220,12 +217,14 @@
                         .then((data) => {
                             alert("Thank you for your RSVP!");
                             document.getElementById("rsvpForm").reset();
+                            submitBtn.classList.remove("loading");
                         })
                         .catch((error) => {
                             console.error("Error:", error);
                             alert(
                                 "There was an error submitting your RSVP. Please try again."
                             );
+                            submitBtn.classList.remove("loading");
                         });
                 });
         </script>

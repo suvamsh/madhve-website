@@ -378,6 +378,22 @@ main {
 .rsvp-form {
     padding: 4rem 0;
     background-color: var(--section-bg);
+    position: relative;
+    z-index: 1;
+}
+
+.rsvp-form .container {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.rsvp-form form {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(139, 115, 85, 0.2);
 }
 
 .form-group {
@@ -453,26 +469,60 @@ main {
 }
 
 .submit-btn {
-    padding: 1.2rem 5rem; /* Increased padding for bigger button */
-    background-color: #8b7355; /* Soft brown */
+    padding: 1.2rem 5rem;
+    background-color: #8b7355;
     color: #ffffff;
     border: none;
-    border-radius: 50px; /* Oval shape */
+    border-radius: 50px;
     font-weight: 500;
-    font-size: 1.4rem; /* Increased font size */
+    font-size: 1.4rem;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: block; /* Make button block level */
-    margin: 3rem auto 0; /* Center the button with auto margins and add more top margin */
-    min-width: 300px; /* Minimum width for the button */
+    display: block;
+    margin: 3rem auto 0;
+    min-width: 300px;
+    position: relative;
 }
 
 .submit-btn:hover {
-    background-color: #b4a089; /* Lighter brown */
+    background-color: #b4a089;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.submit-btn .spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+}
+
+.submit-btn.loading .spinner {
+    display: block;
+}
+
+.submit-btn.loading span {
+    opacity: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Story Timeline */
@@ -1340,6 +1390,15 @@ footer {
     .timeline-content h2 {
         font-size: 1.8rem;
     }
+
+    .rsvp-form .container {
+        max-width: 90%;
+        padding: 0 1rem;
+    }
+
+    .rsvp-form form {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1505,6 +1564,15 @@ footer {
     .schedule-time h3::before,
     .schedule-time h3::after {
         display: none;
+    }
+
+    .rsvp-form .container {
+        max-width: 100%;
+        padding: 0 0.8rem;
+    }
+
+    .rsvp-form form {
+        padding: 1.5rem;
     }
 }
 
