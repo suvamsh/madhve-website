@@ -36,8 +36,10 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="rsvp.html">RSVP</a></li>
-                <li id="travelLink" class="active" style="display: block">
+                <li id="rsvpLink" style="display: none">
+                    <a href="rsvp.html">RSVP</a>
+                </li>
+                <li id="travelLink" style="display: none" class="active">
                     <a href="travel.html">Travel</a>
                 </li>
                 <li><a href="story.html">Story</a></li>
@@ -197,11 +199,17 @@
             // Check localStorage when page loads
             window.onload = function () {
                 const travelLink = document.getElementById("travelLink");
+                const rsvpLink = document.getElementById("rsvpLink");
                 const unlockPrompt = document.querySelector(".unlock-prompt");
                 // Always show travel link on travel page
                 travelLink.style.display = "block";
                 if (localStorage.getItem("passwordUnlocked") === "jw2025") {
+                    rsvpLink.style.display = "block";
                     unlockPrompt.style.display = "none";
+                } else if (
+                    localStorage.getItem("passwordUnlocked") === "blr2025"
+                ) {
+                    rsvpLink.style.display = "block";
                 }
             };
         </script>

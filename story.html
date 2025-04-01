@@ -32,7 +32,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="rsvp.html">RSVP</a></li>
+                <li id="rsvpLink" style="display: none">
+                    <a href="rsvp.html">RSVP</a>
+                </li>
                 <li id="travelLink" style="display: none">
                     <a href="travel.html">Travel</a>
                 </li>
@@ -101,7 +103,7 @@
                             <div class="timeline-date">October 2023</div>
                             <h2>Niharika's First NBA Game</h2>
                             <p>
-                                First NBA game we attended together. Suvamsh’s
+                                First NBA game we attended together. Suvamsh's
                                 love for NBA is clearly rubbing off—watching it
                                 in person is quickly making a fan out of
                                 Niharika.
@@ -209,8 +211,14 @@
             // Check localStorage when page loads
             window.onload = function () {
                 const travelLink = document.getElementById("travelLink");
+                const rsvpLink = document.getElementById("rsvpLink");
                 if (localStorage.getItem("passwordUnlocked") === "jw2025") {
                     travelLink.style.display = "block";
+                    rsvpLink.style.display = "block";
+                } else if (
+                    localStorage.getItem("passwordUnlocked") === "blr2025"
+                ) {
+                    rsvpLink.style.display = "block";
                 }
             };
         </script>

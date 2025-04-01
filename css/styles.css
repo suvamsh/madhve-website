@@ -129,66 +129,73 @@ main {
 }
 
 .unlock-prompt {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 4rem;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
 }
 
 .password-input {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
 .password-input input {
     padding: 0.8rem 1.2rem;
-    border: 1px solid #b4a089; /* Lighter brown border */
-    border-radius: 25px; /* Softer edges */
+    border: 1px solid #b4a089;
+    border-radius: 25px;
     background: #ffffff;
-    color: #8b7355; /* Soft brown text */
+    color: #8b7355;
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    width: 180px;
+    max-width: 100%;
 }
 
 .password-input input:focus {
     outline: none;
-    border-color: #8b7355; /* Darker border on focus */
-    box-shadow: 0 0 5px rgba(139, 115, 85, 0.2); /* Subtle glow */
+    border-color: #8b7355;
+    box-shadow: 0 0 5px rgba(139, 115, 85, 0.2);
 }
 
 .password-input input::placeholder {
-    color: rgba(139, 115, 85, 0.5); /* Soft brown placeholder */
+    color: rgba(139, 115, 85, 0.5);
 }
 
 .unlock-btn {
-    padding: 0.8rem 2.5rem; /* Increased horizontal padding for oval shape */
-    background-color: #8b7355; /* Soft brown */
+    padding: 0.8rem 2.5rem;
+    background-color: #8b7355;
     border: none;
-    border-radius: 50px; /* Increased border radius for pill/oval shape */
-    color: #ffffff; /* White text */
+    border-radius: 50px;
+    color: #ffffff;
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase; /* Match RSVP button style */
-    letter-spacing: 1px; /* Match RSVP button style */
+    text-transform: uppercase;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* Space between icon and text */
+    gap: 0.5rem;
 }
 
 .unlock-btn::before {
-    content: "🔓"; /* Unlock symbol */
-    font-size: 1.1rem; /* Slightly larger than text */
+    content: "🔓";
+    font-size: 1.1rem;
 }
 
 .unlock-btn:hover {
-    background-color: #b4a089; /* Lighter brown */
-    color: #ffffff;
-    transform: translateY(-1px);
+    background-color: #b4a089;
+    transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
 }
 
@@ -318,10 +325,13 @@ main {
     margin-top: 1rem;
     font-family: "Montserrat", sans-serif;
     font-style: italic;
+    display: none;
+    width: 100%;
+    text-align: center;
 }
 
 .cta-button {
-    display: inline-block;
+    display: none;
     padding: 1rem 2.5rem;
     background-color: #8b7355;
     color: #fff;
@@ -334,6 +344,9 @@ main {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
+    width: auto;
+    min-width: 200px;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -1166,26 +1179,41 @@ footer {
     width: 200px;
     padding: 0.8rem;
     background-color: var(--primary-color);
-    border: 1px solid rgba(98, 76, 56, 0.2);
-    border-radius: 5px;
-    color: var(--secondary-color);
+    border: 1px solid #b4a089;
+    border-radius: 25px;
+    color: #8b7355;
     font-family: "Montserrat", sans-serif;
-}
-
-.unlock-btn {
-    background-color: #8b7355; /* Soft brown */
-    color: #ffffff; /* White text */
-    padding: 0.8rem 2.5rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: 500;
-    cursor: pointer;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
-.unlock-btn:hover {
-    background-color: #b4a089; /* Lighter brown */
+.unlock-btn {
+    padding: 0.8rem 2.5rem;
+    background-color: #8b7355;
+    border: none;
+    border-radius: 50px;
     color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.unlock-btn::before {
+    content: "🔓";
+    font-size: 1.1rem;
+}
+
+.unlock-btn:hover {
+    background-color: #b4a089;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
 }
 
 /* Responsive Design */
@@ -1247,18 +1275,19 @@ footer {
     }
 
     .unlock-prompt {
-        margin-left: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .password-input {
-        width: 100%;
-        max-width: 300px;
+        margin-top: 1.5rem;
+        padding: 0 0.8rem;
     }
 
     .password-input input {
-        width: 120px;
+        width: 160px;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .unlock-btn {
+        padding: 0.7rem 2rem;
+        font-size: 0.8rem;
     }
 
     .welcome-section h2 {
@@ -1399,6 +1428,21 @@ footer {
     .rsvp-form form {
         padding: 2rem;
     }
+
+    .rsvp-deadline {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+        min-width: 180px;
+    }
+
+    .unlock-prompt {
+        display: block !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1431,8 +1475,9 @@ footer {
     }
 
     .cta-button {
-        padding: 0.9rem 3rem; /* Further reduced padding for mobile */
-        font-size: 1.1rem;
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        min-width: 160px;
     }
 
     .schedule-item {
@@ -1492,24 +1537,15 @@ footer {
         font-size: 0.9rem;
     }
 
-    .password-input {
-        flex-direction: row;
-        gap: 0.3rem;
-    }
-
     .password-input input {
-        width: 100px;
-        padding: 0.4rem;
+        width: 140px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
     }
 
     .unlock-btn {
-        padding: 0.6rem 2rem; /* Slightly reduced padding for mobile */
+        padding: 0.6rem 1.5rem;
         font-size: 0.8rem;
-        gap: 0.3rem; /* Smaller gap on mobile */
-    }
-
-    .unlock-btn::before {
-        font-size: 1rem; /* Slightly smaller on mobile */
     }
 
     .outfit-description h4,
@@ -1573,6 +1609,22 @@ footer {
 
     .rsvp-form form {
         padding: 1.5rem;
+    }
+
+    .rsvp-deadline {
+        font-size: 0.9rem;
+        margin-top: 0.6rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+
+    .unlock-prompt {
+        margin-top: 1.2rem;
+        padding: 0 0.6rem;
     }
 }
 

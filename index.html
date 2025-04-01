@@ -69,7 +69,9 @@
             </div>
             <ul class="nav-links">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="rsvp.html">RSVP</a></li>
+                <li id="rsvpLink" style="display: none">
+                    <a href="rsvp.html">RSVP</a>
+                </li>
                 <li id="travelLink" style="display: none">
                     <a href="travel.html">Travel</a>
                 </li>
@@ -89,27 +91,28 @@
                             &<br />
                             Niharika
                         </h1>
+                        <p class="hero-date">Bengaluru, India</p>
                         <p class="hero-date">November 28-30, 2025</p>
-                        <p class="rsvp-deadline">
+                        <p id="rsvp-deadline" class="rsvp-deadline">
                             Please RSVP by August 1st, 2025
                         </p>
-                        <a href="rsvp.html" class="cta-button">RSVP</a>
-                    </div>
-                </div>
-                <div class="hero-unlock">
-                    <div class="unlock-prompt">
-                        <div class="password-input">
-                            <input
-                                type="password"
-                                id="passwordInput"
-                                placeholder="Password"
-                            />
-                            <button
-                                onclick="checkPassword()"
-                                class="unlock-btn"
-                            ></button>
+                        <a id="rsvp-button" href="rsvp.html" class="cta-button">
+                            RSVP
+                        </a>
+                        <div class="unlock-prompt">
+                            <div class="password-input">
+                                <input
+                                    type="password"
+                                    id="passwordInput"
+                                    placeholder="Password"
+                                />
+                                <button
+                                    onclick="checkPassword()"
+                                    class="unlock-btn"
+                                ></button>
+                            </div>
+                            <p id="errorMessage" class="error-message"></p>
                         </div>
-                        <p id="errorMessage" class="error-message"></p>
                     </div>
                 </div>
             </section>
@@ -138,13 +141,23 @@
             // Check localStorage when page loads
             window.onload = function () {
                 const travelLink = document.getElementById("travelLink");
+                const rsvpLink = document.getElementById("rsvpLink");
+                const rsvpButton = document.getElementById("rsvp-button");
+                const rsvpDeadline = document.getElementById("rsvp-deadline");
+
                 if (localStorage.getItem("passwordUnlocked") === "jw2025") {
                     travelLink.style.display = "block";
+                    rsvpLink.style.display = "block";
+                    rsvpButton.style.display = "inline-block";
+                    rsvpDeadline.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
                 } else if (
                     localStorage.getItem("passwordUnlocked") === "blr2025"
                 ) {
+                    rsvpLink.style.display = "block";
+                    rsvpButton.style.display = "inline-block";
+                    rsvpDeadline.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
                 }
@@ -153,14 +166,23 @@
             function checkPassword() {
                 const password = document.getElementById("passwordInput").value;
                 const travelLink = document.getElementById("travelLink");
+                const rsvpLink = document.getElementById("rsvpLink");
                 const errorMessage = document.getElementById("errorMessage");
+                const rsvpButton = document.getElementById("rsvp-button");
+                const rsvpDeadline = document.getElementById("rsvp-deadline");
 
                 if (password === "jw2025") {
                     travelLink.style.display = "block";
+                    rsvpLink.style.display = "block";
+                    rsvpButton.style.display = "inline-block";
+                    rsvpDeadline.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
                     localStorage.setItem("passwordUnlocked", "jw2025");
                 } else if (password === "blr2025") {
+                    rsvpLink.style.display = "block";
+                    rsvpButton.style.display = "inline-block";
+                    rsvpDeadline.style.display = "block";
                     document.querySelector(".unlock-prompt").style.display =
                         "none";
                     localStorage.setItem("passwordUnlocked", "blr2025");
