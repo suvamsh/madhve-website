@@ -144,30 +144,40 @@
                 const rsvpLink = document.getElementById("rsvpLink");
                 const rsvpButton = document.getElementById("rsvp-button");
                 const rsvpDeadline = document.getElementById("rsvp-deadline");
+                const unlockPrompt = document.querySelector(".unlock-prompt");
 
                 if (localStorage.getItem("passwordUnlocked") === "jw2025") {
                     travelLink.style.display = "block";
                     rsvpLink.style.display = "block";
                     rsvpButton.style.display = "inline-block";
                     rsvpDeadline.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    unlockPrompt.style.visibility = "hidden";
+                    unlockPrompt.style.opacity = "0";
+                    unlockPrompt.style.position = "absolute";
+                    unlockPrompt.style.pointerEvents = "none";
                 } else if (
                     localStorage.getItem("passwordUnlocked") === "blr2025"
                 ) {
                     rsvpLink.style.display = "block";
                     rsvpButton.style.display = "inline-block";
                     rsvpDeadline.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    unlockPrompt.style.visibility = "hidden";
+                    unlockPrompt.style.opacity = "0";
+                    unlockPrompt.style.position = "absolute";
+                    unlockPrompt.style.pointerEvents = "none";
                 } else if (
                     localStorage.getItem("passwordUnlocked") === "family2025"
                 ) {
                     rsvpLink.style.display = "block";
                     rsvpButton.style.display = "inline-block";
                     rsvpDeadline.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    unlockPrompt.style.visibility = "hidden";
+                    unlockPrompt.style.opacity = "0";
+                    unlockPrompt.style.position = "absolute";
+                    unlockPrompt.style.pointerEvents = "none";
                 }
             };
 
@@ -178,28 +188,38 @@
                 const errorMessage = document.getElementById("errorMessage");
                 const rsvpButton = document.getElementById("rsvp-button");
                 const rsvpDeadline = document.getElementById("rsvp-deadline");
+                const unlockPrompt = document.querySelector(".unlock-prompt");
 
                 if (password === "jw2025") {
                     travelLink.style.display = "block";
                     rsvpLink.style.display = "block";
                     rsvpButton.style.display = "inline-block";
                     rsvpDeadline.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    unlockPrompt.style.visibility = "hidden";
+                    unlockPrompt.style.opacity = "0";
+                    unlockPrompt.style.position = "absolute";
+                    unlockPrompt.style.pointerEvents = "none";
                     localStorage.setItem("passwordUnlocked", "jw2025");
                 } else if (password === "blr2025") {
                     rsvpLink.style.display = "block";
                     rsvpButton.style.display = "inline-block";
                     rsvpDeadline.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    unlockPrompt.style.visibility = "hidden";
+                    unlockPrompt.style.opacity = "0";
+                    unlockPrompt.style.position = "absolute";
+                    unlockPrompt.style.pointerEvents = "none";
                     localStorage.setItem("passwordUnlocked", "blr2025");
                 } else if (password === "family2025") {
                     rsvpLink.style.display = "block";
                     rsvpButton.style.display = "inline-block";
                     rsvpDeadline.style.display = "block";
-                    document.querySelector(".unlock-prompt").style.display =
-                        "none";
+                    unlockPrompt.style.display = "none";
+                    unlockPrompt.style.visibility = "hidden";
+                    unlockPrompt.style.opacity = "0";
+                    unlockPrompt.style.position = "absolute";
+                    unlockPrompt.style.pointerEvents = "none";
                     localStorage.setItem("passwordUnlocked", "family2025");
                 } else {
                     errorMessage.textContent = "Incorrect password.";
